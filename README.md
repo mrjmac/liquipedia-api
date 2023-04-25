@@ -1,6 +1,6 @@
 # Liquipedia-Api
 
-A semi useless API for liquipedia. Made as an exercise in web scraping.
+An API for liquipedia. Made as an exercise in web scraping.
 
 Returns the info seen in the following image in a dictionary.
 
