@@ -13,27 +13,15 @@ soup = BeautifulSoup(page.content, "html.parser")
 
 results = soup.find(id = "mw-content-text")
 
-info = results.find_all("div", class_ = "infobox-cell-2")
+info = results.find_all("div", style = "width:50%")
+info2 = results.find_all("div", class_ = "infobox-cell-2")
 
 dict = {}
 
-i = 1
+i = 0
 for fact in info :
-    if fact.text.strip() == "" :
-        test = fact.find_all("a")
-        information = ""
-        for thing in test :
-            img = thing.find('img', alt=True)
-            information += img['alt'] + "\n"
-
-    if i % 2 == 0 :
-        if fact.text.strip() != "" :
-            information = fact.text.strip()
-        dict[name.replace(" ", "")] = information
-    else :
-        name = fact.text.strip()
-    i += 1
-    
+    dict[info2[i].text.strip()] = fact.text.strip()
+    i += 1    
     
 print(dict)   
 
